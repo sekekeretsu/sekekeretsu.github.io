@@ -135,18 +135,7 @@
 </h3>
 
 
-      <hr>
-
-      <h2 class="section-title">Computational Study of Serotonin Receptors (GPCR)</h2>
-      <figure>
-        <img class="hero-img" src="membrane.jpg" alt="GPCR membrane illustration" />
-      </figure>
-      <p>
-        Recent studies demonstrate that Gaussian accelerated molecular dynamics (GaMD) can effectively
-        probe binding and activation mechanisms of GPCRs. This work explores whether enhanced sampling
-        methods can resolve unresolved structural questions in serotonin receptors.
-      </p>
-
+     
       <hr>
 
       <h2 class="section-title">
@@ -190,11 +179,20 @@
       <h2 class="section-title">
         Identification of Protein Complexes in Protein-Protein Interaction (PPI) Networks
       </h2>
+      <p>
+       Proteins rarely act alone in the cell. Instead, they work together in groups called protein complexes to carry out essential biological functions. Understanding how these complexes form and function is important for advancing basic biology and improving our knowledge of disease mechanisms. Scientists often use protein–protein interaction networks to identify protein complexes, but many existing methods assume these networks are static and focus mainly on finding tightly connected groups of proteins. As a result, some important complexes may be missed.
+
+In this study, we present a new computational approach called Weighted Edge-based Clustering (WEC) to improve the detection of protein complexes. Rather than relying only on how many connections proteins have, WEC evaluates the strength of interactions between proteins by combining information about network structure with patterns of gene expression. This allows the method to identify groups of proteins that are both strongly connected and biologically coordinated.
+
+When tested on multiple real-world biological datasets, WEC identified protein complexes more effectively than several widely used existing methods. By better reflecting the dynamic and functional nature of protein interactions, this approach provides a valuable tool for studying cellular organization and may support future research into the molecular basis of health and disease.
+      </p>
+
+      
       <figure>
-        <img class="hero-img" src="sarscov2.jpg" alt="SARS-CoV-2 illustration" />
+        <img class="hero-img" src="ppi.png" alt="PPI workflow illustration" />
       </figure>
       <section>
-  <h3>Algorithm 1: Weighted Edge-based Clustering (WEC)</h3>
+  <h1>Algorithm 1: Weighted Edge-based Clustering (WEC)</h1>
 
   <p><strong>Input:</strong></p>
   <ul>
@@ -257,24 +255,17 @@ end for
   </pre>
 </section>
 <hr>
-      <p>
-       Proteins rarely act alone in the cell. Instead, they work together in groups called protein complexes to carry out essential biological functions. Understanding how these complexes form and function is important for advancing basic biology and improving our knowledge of disease mechanisms. Scientists often use protein–protein interaction networks to identify protein complexes, but many existing methods assume these networks are static and focus mainly on finding tightly connected groups of proteins. As a result, some important complexes may be missed.
-
-In this study, we present a new computational approach called Weighted Edge-based Clustering (WEC) to improve the detection of protein complexes. Rather than relying only on how many connections proteins have, WEC evaluates the strength of interactions between proteins by combining information about network structure with patterns of gene expression. This allows the method to identify groups of proteins that are both strongly connected and biologically coordinated.
-
-When tested on multiple real-world biological datasets, WEC identified protein complexes more effectively than several widely used existing methods. By better reflecting the dynamic and functional nature of protein interactions, this approach provides a valuable tool for studying cellular organization and may support future research into the molecular basis of health and disease.
-      </p>
 
  <div class="pub-box">
         <p>
           <strong>Publication:</strong><br>
-           <strong>Keretsu, S.</strong>, Bhujbal, S. P., & Cho, S. J. (2020).
-          <em>Rational approach toward COVID-19 main protease inhibitors via molecular docking, molecular dynamics
-            simulation and free energy calculation.</em> Scientific Reports, 10, 17716.
+                      <strong>Keretsu, S.</strong>, & Sarmah, R. (2016).
+            <em>Weighted edge based clustering to identify protein complexes in protein–protein interaction networks
+            incorporating gene expression profile.</em> Computational Biology and Chemistry, 65, 69–79
         </p>
   
         <a
-          href="https://doi.org/10.1038/s41598-020-74468-0"
+          href="https://doi.org/10.1016/j.compbiolchem.2016.10.001"
           target="_blank"
           rel="noopener"
           style="
@@ -289,7 +280,21 @@ When tested on multiple real-world biological datasets, WEC identified protein c
       </div>
 
       
-      <hr>
+    
+
+ <hr>
+
+      <h2 class="section-title">Computational Study of Serotonin Receptors (GPCR)</h2>
+      <figure>
+        <img class="hero-img" src="membrane.jpg" alt="GPCR membrane illustration" />
+      </figure>
+      <p>
+        Recent studies demonstrate that Gaussian accelerated molecular dynamics (GaMD) can effectively
+        probe binding and activation mechanisms of GPCRs. This work explores whether enhanced sampling
+        methods can resolve unresolved structural questions in serotonin receptors.
+      </p>
+<hr>
+      
 
       <h2 class="section-title">Mechanism of STING Agonism</h2>
       <p>
