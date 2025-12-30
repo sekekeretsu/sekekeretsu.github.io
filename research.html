@@ -88,7 +88,7 @@
 
       <hr>
 
-      <h2 class="section-title">Characterizing MAIT cells in Glioblastoma</h2>
+      <h2 class="section-title">Characterizing MAIT Cells in Glioblastoma</h2>
       <figure>
         <img class="hero-img" src="mait.jpeg" alt="MAIT cells in GBM" />
       </figure>
@@ -137,7 +137,7 @@
 
       <hr>
 
-      <h2 class="section-title">Computational study of serotonin receptors (GPCR)</h2>
+      <h2 class="section-title">Computational Study of Serotonin Receptors (GPCR)</h2>
       <figure>
         <img class="hero-img" src="membrane.jpg" alt="GPCR membrane illustration" />
       </figure>
@@ -150,7 +150,7 @@
       <hr>
 
       <h2 class="section-title">
-        Virtual screening of MEROPS for SARS-CoV-2 main protease inhibitors
+        Virtual Mcreening of MEROPS for SARS-CoV-2 Main Protease Inhibitors
       </h2>
       <figure>
         <img class="hero-img" src="sarscov2.jpg" alt="SARS-CoV-2 illustration" />
@@ -184,10 +184,114 @@
         </a>
       </div>
 
+
+            <hr>
+
+      <h2 class="section-title">
+        Identification of Protein Complexes in Protein-Protein Interaction (PPI) Networks
+      </h2>
+      <figure>
+        <img class="hero-img" src="sarscov2.jpg" alt="SARS-CoV-2 illustration" />
+      </figure>
+      <section>
+  <h3>Algorithm 1: Weighted Edge-based Clustering (WEC)</h3>
+
+  <p><strong>Input:</strong></p>
+  <ul>
+    <li>Protein–Protein Interaction (PPI) Network: <em>G(V, E)</em></li>
+    <li>Gene Expression Profiles (GEP): <em>G(V)</em></li>
+    <li>Threshold parameters: <em>τ, T<sub>f</sub>, T<sub>enrich</sub>, λ</em></li>
+  </ul>
+
+  <p><strong>Output:</strong></p>
+  <ul>
+    <li>Set of predicted protein complexes: <em>FC</em></li>
+  </ul>
+
+  <p><strong>Initialization:</strong></p>
+  <pre>
+FC ← ∅
+PC ← ∅
+  </pre>
+
+  <p><strong>Main Procedure:</strong></p>
+  <pre>
+for each vertex v ∈ V do
+    C ← ∅
+    C ← {v}
+
+    for each neighboring vertex u ∈ N(v) do
+        PCC ← evaluate gene expression correlation between v and u
+        ECC ← evaluate edge clustering coefficient between v and u
+        WEdge ← (ECC × λ) + ((1 − λ) × PCC)
+
+        if WEdge ≥ τ then
+            C ← C ∪ {u}
+        end if
+    end for
+
+    if OS(Cmax, C) &lt; T_f then
+        PC ← PC ∪ {C}
+    else
+        if |C| &gt; |C′| then
+            PC ← PC ∪ {C}
+            discard C′
+        end if
+    end if
+end for
+  </pre>
+
+  <p><strong>Enrichment Step:</strong></p>
+  <pre>
+for each complex C ∈ PC do
+    U_enrich ← candidate neighboring proteins
+
+    for each u′ ∈ U_enrich do
+        if NA(u′, C) ≥ T_enrich then
+            C ← C ∪ {u′}
+        end if
+    end for
+
+    FC ← FC ∪ {C}
+end for
+  </pre>
+</section>
+<hr>
+      <p>
+       Proteins rarely act alone in the cell. Instead, they work together in groups called protein complexes to carry out essential biological functions. Understanding how these complexes form and function is important for advancing basic biology and improving our knowledge of disease mechanisms. Scientists often use protein–protein interaction networks to identify protein complexes, but many existing methods assume these networks are static and focus mainly on finding tightly connected groups of proteins. As a result, some important complexes may be missed.
+
+In this study, we present a new computational approach called Weighted Edge-based Clustering (WEC) to improve the detection of protein complexes. Rather than relying only on how many connections proteins have, WEC evaluates the strength of interactions between proteins by combining information about network structure with patterns of gene expression. This allows the method to identify groups of proteins that are both strongly connected and biologically coordinated.
+
+When tested on multiple real-world biological datasets, WEC identified protein complexes more effectively than several widely used existing methods. By better reflecting the dynamic and functional nature of protein interactions, this approach provides a valuable tool for studying cellular organization and may support future research into the molecular basis of health and disease.
+      </p>
+
+ <div class="pub-box">
+        <p>
+          <strong>Publication:</strong><br>
+           <strong>Keretsu, S.</strong>, Bhujbal, S. P., & Cho, S. J. (2020).
+          <em>Rational approach toward COVID-19 main protease inhibitors via molecular docking, molecular dynamics
+            simulation and free energy calculation.</em> Scientific Reports, 10, 17716.
+        </p>
+  
+        <a
+          href="https://doi.org/10.1038/s41598-020-74468-0"
+          target="_blank"
+          rel="noopener"
+          style="
+            display:inline-block;
+            padding:.45rem .75rem;
+            border:1px solid var(--border);
+            border-radius:10px;
+            text-decoration:none;"
+        >
+          Read full article
+        </a>
+      </div>
+
       
       <hr>
 
-      <h2 class="section-title">Mechanism of STING agonism</h2>
+      <h2 class="section-title">Mechanism of STING Agonism</h2>
       <p>
         STING activation is critical for innate immune signaling and cancer immunotherapy.
         This project focuses on mechanistic understanding and rational design of
