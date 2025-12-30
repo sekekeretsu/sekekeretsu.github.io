@@ -1,97 +1,94 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<!--center><h2> About Me</ih2></center-->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="no-referrer">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="description" content="Seke Keretsu." />
 
-<meta name="description" content="Seke Keretsu.">
+  <title>PyMOL Tutorial</title>
 
+  <!-- Shared site styling -->
+  <link rel="stylesheet" href="assets/site.css" />
 
+  <!-- Page-specific styling -->
+  <style>
+    .pdf-wrap{
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(0,0,0,.06);
+    }
 
-<style>
-div {
-  width: 100%;
-  max-width: 1000px;
-  background-color:#D3D3D3;
-  text-align:justify;	
-  text-indent:50px; 
-  margin-right: 0%;
-  margin-left:  0%;
+    /* Responsive PDF viewer: full width, tall enough for reading */
+    .pdf-viewer{
+      width: 100%;
+      height: min(80vh, 1100px);
+      border: 0;
+      display: block;
+    }
 
-}
-</style>
+    .pdf-actions{
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: .75rem;
+    }
 
-
+    .btn{
+      display: inline-block;
+      padding: .55rem .8rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      background: rgba(255,255,255,.7);
+    }
+    .btn:hover{
+      text-decoration: none;
+    }
+  </style>
 </head>
-<center>
 
 <body>
-<div>
+  <nav class="topnav" aria-label="Primary navigation">
+    <div class="inner">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publication.html">Publication</a>
+      <a href="software.html">Software</a>
+      <a class="active" href="tutorial.html">Tutorial</a>
+      <a href="contact.html">Contact</a>
+      <a href="blog.html">Blog</a>
+    </div>
+  </nav>
 
+  <main class="container">
+    <section class="card">
+      <h1>Basic PyMOL tutorials for beginners</h1>
+      <p>
+        Embedded PDF tutorial. If it doesn’t display in your browser, use the download link below.
+      </p>
 
-<style>
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
+      <div class="pdf-actions">
+        <a class="btn" href="pymol.pdf">Open / Download PDF</a>
+      </div>
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: left;
-  padding: 10px 8px;
-  text-decoration: none;
-  font-size: 17px;
-}
+      <div class="pdf-wrap">
+        <!-- Prefer <iframe> for PDF embedding; it’s widely supported -->
+        <iframe
+          class="pdf-viewer"
+          src="pymol.pdf"
+          title="PyMOL Tutorial PDF">
+        </iframe>
+      </div>
+    </section>
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.illustration{
-width: 100%
-}
-</style>
-
-
-</head>
-<body>
-
-<div class="topnav">
-  <a href="index.html">Home</a>
-  <a href="research.html">Research</a>
-  <a href="publication.html">Publication</a>
-  <a href="software.html">Software</a>
-  <a class="active" href="tutorial.html">Tutorial</a>
-  <a href="contact.html">Contact</a>
-  <a href="blog.html">Blog </a>
-</div>
-
-
-
-
-<div>
-
-<embed src="pymol.pdf" width="800px" height="2100px" />
-
-
-
-</div>
-
-<center>
-<footer class="flex-container footer">Copyright © 2021. Seke Keretsu. All rights reserved.
-</footer>
-</center>
+    <footer>
+      Copyright © 2021. Seke Keretsu. All rights reserved.
+    </footer>
+  </main>
 </body>
-</center>
 </html>
