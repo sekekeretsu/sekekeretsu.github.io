@@ -1,122 +1,128 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<!--center><h2> About Me</ih2></center-->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="no-referrer">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="description" content="Seke Keretsu." />
 
-<meta name="description" content="Seke Keretsu.">
+  <title>Tutorials</title>
 
+  <!-- Shared site styling -->
+  <link rel="stylesheet" href="site.css" />
 
+  <!-- Page-specific styling -->
+  <style>
+    .tutorial-list{
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      display: grid;
+      gap: 1rem;
+    }
 
-<style>
-div {
-  width: 100%;
-  max-width: 1000px;
-  background-color:#D3D3D3;
-  text-align:justify;	
-  text-indent:50px; 
-  margin-right: 0%;
-  margin-left:  0%;
+    .tutorial-item{
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      background: rgba(255,255,255,.6);
+    }
 
-}
-</style>
+    .tutorial-item h2{
+      margin: 0 0 .4rem;
+      font-size: 1.05rem;
+    }
 
+    .tutorial-item p{
+      margin: .4rem 0 0;
+    }
 
+    .tutorial-link{
+      display: inline-block;
+      margin-top: .4rem;
+      padding: .45rem .7rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      font-size: .95rem;
+    }
+
+    .tutorial-link:hover{
+      text-decoration: none;
+    }
+  </style>
 </head>
-<center>
 
 <body>
-<div>
+  <nav class="topnav" aria-label="Primary navigation">
+    <div class="inner">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publication.html">Publication</a>
+      <a href="software.html">Software</a>
+      <a class="active" href="tutorial.html">Tutorial</a>
+      <a href="contact.html">Contact</a>
+      <a href="blog.html">Blog</a>
+    </div>
+  </nav>
 
+  <main class="container">
+    <section class="card">
+      <h1>Tutorials</h1>
+      <p>
+        Selected tutorials and notes related to molecular dynamics, trajectory analysis, and visualization tools.
+      </p>
 
-<style>
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
+      <ul class="tutorial-list">
+        <li class="tutorial-item">
+          <h2>MMPBSA calculation using <code>.dcd</code> trajectories</h2>
+          <a class="tutorial-link"
+             href="https://docs.google.com/document/d/1PcE4J3DO7pDsaGbBY6OUlo-pNA6-O_oihMYRI17fTjg/edit?usp=sharing">
+            View tutorial
+          </a>
+          <p>
+            This tutorial walks through file conversion steps to generate GROMACS-compatible files for
+            protein–ligand or protein–protein interaction free-energy calculations using
+            <code>g_mmpbsa</code>, <code>gmx mmpbsa</code>, and related tools.
+          </p>
+        </li>
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: left;
-  padding: 10px 8px;
-  text-decoration: none;
-  font-size: 17px;
-}
+        <li class="tutorial-item">
+          <h2>Common trajectory analysis commands (GROMACS)</h2>
+          <a class="tutorial-link"
+             href="https://docs.google.com/document/d/1dQ9Rmg5NiVzVwnHtr36PW5ti_zvEXheaVv-tcRaP6dk/edit?usp=sharing">
+            View tutorial
+          </a>
+          <p>
+            A concise reference of commonly used GROMACS commands for simulation trajectory analysis.
+          </p>
+        </li>
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
+        <li class="tutorial-item">
+          <h2>Basic PyMOL tutorials for beginners</h2>
+          <a class="tutorial-link" href="pymol_tut.html">
+            View tutorial
+          </a>
+          <p>
+            Introductory PyMOL tutorials covering basic visualization, selections, and rendering for
+            structural biology.
+          </p>
+        </li>
 
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}
+        <li class="tutorial-item">
+          <h2>Thermodynamic Integration (fast growth)</h2>
+          <p>
+            Notes and planned material on thermodynamic integration methods using fast-growth approaches.
+            (Content to be expanded.)
+          </p>
+        </li>
+      </ul>
+    </section>
 
-.illustration{
-width: 100%
-}
-</style>
-
-
-</head>
-<body>
-
-<div class="topnav">
-  <a href="index.html">Home</a>
-  <a href="research.html">Research</a>
-  <a href="publication.html">Publication</a>
-  <a href="software.html">Software</a>
-  <a class="active" href="tutorial.html">Tutorial</a>
-  <a href="contact.html">Contact</a>
-  <a href="blog.html">Blog </a>
-</div>
-
-
-
-
-<div>
-<ul style="list-style-type:disc;">
-  <li><p>
-	<b>MMPBSA calculation using .dcd trajectories</b>
-	<a href="https://docs.google.com/document/d/1PcE4J3DO7pDsaGbBY6OUlo-pNA6-O_oihMYRI17fTjg/edit?usp=sharing">Link Here</a>
-		    <p>This tutorial takes the user through the file conversion steps to generate the gromacs compatible files to perform protein-ligand or protein-protein interactions using g_mmpbsa , gmx mmpbsa, gmmpsa 	etc"</p>
-
-	</p>
-</li>
-	  <li><p>
-	<b>Common Trajectory Analysis Commands [Gromacs]</b>
-	<a href="https://docs.google.com/document/d/1dQ9Rmg5NiVzVwnHtr36PW5ti_zvEXheaVv-tcRaP6dk/edit?usp=sharing">Link Here</a>
-		    <p> Common Gromacs Simulation Trajectory Analysis Commands</p>
-
-	</p>
-</li>
-	
-  <li>
-	<p>
-	<b>Basic pymol tutorials for beginners</b>
-	<a href="pymol_tut.html">Link Here</a>
-	</p>
-</li>
-  <li>Themodynamics Integration (fast growth)</li>
-</ul>  
-
-
-
-
-
-
-</div>
-
-<center>
-<footer class="flex-container footer">Copyright © 2021. Seke Keretsu. All rights reserved.
-</footer>
-</center>
+    <footer>
+      Copyright © 2021. Seke Keretsu. All rights reserved.
+    </footer>
+  </main>
 </body>
-</center>
-i</html>
+</html>
