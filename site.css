@@ -2,17 +2,24 @@
    Global variables & reset
    ============================== */
 :root{
-  --bg: #f6f7f9;
-  --card: #ffffff;
-  --text: #1f2937;
-  --muted: #4b5563;
-  --border: #e5e7eb;
+  /* Backgrounds */
+  --bg: #eef7fb;              /* soft cyan page background */
+  --card: #ffffff;            /* content cards */
+  --border: #d1d5db;           /* light gray borders */
 
-  --nav: #111827;
-  --navText: #f9fafb;
-  --navHover: #374151;
-  --accent: #22c55e;
+  /* Text */
+  --text: #1f2933;             /* primary text */
+  --muted: #4b5563;            /* secondary text */
 
+  /* Navigation */
+  --nav: #2f8fb3;              /* dark teal */
+  --navText: #ffffff;
+  --navHover: #4fb3d8;         /* lighter teal */
+
+  /* Accent */
+  --accent: #4fb3d8;
+
+  /* Layout */
   --radius: 14px;
   --shadow: 0 10px 25px rgba(0,0,0,.08);
   --maxw: 980px;
@@ -51,7 +58,7 @@ body{
    ============================== */
 .topnav{
   background: var(--nav);
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.2);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -82,15 +89,19 @@ body{
 }
 
 .topnav a.active{
-  background: rgba(34,197,94,.18);
-  border: 1px solid rgba(34,197,94,.35);
+  background: rgba(79,179,216,.35);
+  border: 1px solid rgba(255,255,255,.45);
 }
 
 /* ==============================
    Content card
    ============================== */
 .card{
-  background: var(--card);
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f4fbfe 100%
+  );
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -107,7 +118,7 @@ body{
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 999px;
-  border: 1px solid var(--border);
+  border: 2px solid var(--accent);
   box-shadow: 0 8px 20px rgba(0,0,0,.10);
   margin: 0 auto 1rem;
 }
@@ -115,9 +126,17 @@ body{
 /* ==============================
    Typography
    ============================== */
-h1, h2, h3{
+h1{
+  color: var(--nav);
+}
+
+h2, h3{
+  background: var(--accent);
+  color: #ffffff;
+  padding: .35rem .75rem;
+  border-radius: 6px;
   line-height: 1.3;
-  margin: 0 0 .75rem;
+  margin: 0 0 .85rem;
 }
 
 p{
@@ -128,7 +147,7 @@ p{
 }
 
 a{
-  color: #2563eb;
+  color: var(--nav);
 }
 
 a:hover{
@@ -157,5 +176,9 @@ footer{
   .topnav a{
     padding: .5rem .6rem;
     font-size: .95rem;
+  }
+
+  h2, h3{
+    font-size: 1.05rem;
   }
 }
