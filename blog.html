@@ -1,166 +1,165 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title> Blog</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="description" content="Seke Keretsu." />
 
-<!--center><h2> About Me</ih2></center-->
+  <title>Blog</title>
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="no-referrer">
-<meta name="description" content="Seke Keretsu.">
+  <!-- Shared site styling -->
+  <link rel="stylesheet" href="assets/site.css" />
 
+  <!-- Page-specific styling -->
+  <style>
+    .intro-note{
+      color: #a21caf;
+      margin-bottom: 1rem;
+    }
 
+    .blog-section{
+      margin-top: 1.25rem;
+    }
 
-<style>
-div {
-  width: 100%;
-  max-width: 1000px;
-  min-width: 100px;
-  background-color:#D3D3D3;
-  text-align:justify;	
-  text-indent:50px; 
- margin-right: 0%;
-  margin-left:  0%;
+    .blog-section h2{
+      margin-bottom: .5rem;
+      font-size: 1.15rem;
+    }
 
-}
-</style>
+    .blog-list{
+      list-style: none;
+      padding: 0;
+      margin: .5rem 0 0;
+      display: grid;
+      gap: .75rem;
+    }
+
+    .blog-item{
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: .9rem;
+      background: rgba(255,255,255,.6);
+    }
+
+    .blog-item a{
+      font-weight: 500;
+    }
+  </style>
 </head>
 
-
-
-<center>
 <body>
+  <nav class="topnav" aria-label="Primary navigation">
+    <div class="inner">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publication.html">Publication</a>
+      <a href="software.html">Software</a>
+      <a href="tutorial.html">Tutorial</a>
+      <a href="contact.html">Contact</a>
+      <a class="active" href="blog.html">Blog</a>
+    </div>
+  </nav>
 
-<style>
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
+  <main class="container">
+    <section class="card">
+      <h1>Blog</h1>
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: left;
-  padding: 10px 8px;
-  text-decoration: none;
-  font-size: 17px;
-}
+      <p class="intro-note">
+        Anything on the internet that catches my attention may pop up here.
+      </p>
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
+      <div class="blog-section">
+        <h2>Interesting science podcasts</h2>
+        <ul class="blog-list">
+          <li class="blog-item">
+            <p>
+              <strong>Lex Fridman Podcast</strong><br>
+              Lex Fridman is an AI researcher working on autonomous vehicles, human–robot interaction,
+              and machine learning at MIT. A Joe Rogan–style podcast focused primarily on science and technology.
+              <a href="https://www.youtube.com/user/lexfridman">[More]</a>
+            </p>
+          </li>
 
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}
+          <li class="blog-item">
+            <p>
+              <strong>Sean Carroll – Mindscape</strong><br>
+              Sean Carroll is a theoretical physicist specializing in quantum mechanics, gravity, and cosmology.
+              Conversations on science, philosophy, society, and culture.
+              <a href="https://www.youtube.com/channel/UCRhV1rWIpm_pU19bBm_2RXw">[More]</a>
+            </p>
+          </li>
+        </ul>
+      </div>
 
-.illustration{
-width: 100%
-}
-</style>
+      <div class="blog-section">
+        <h2>Artificial Intelligence / Machine Learning</h2>
+        <ul class="blog-list">
+          <li class="blog-item">
+            <p>
+              <strong>DeepLearning.AI — AI for Everyone</strong><br>
+              Educational resources and courses on AI fundamentals and applications.
+              <a href="https://www.deeplearning.ai/">[More]</a>
+            </p>
+          </li>
 
+          <li class="blog-item">
+            <p>
+              <strong>Coursera — Andrew Ng</strong><br>
+              Machine learning and deep learning courses taught by Andrew Ng.
+              <a href="https://www.coursera.org/instructor/andrewng">[More]</a>
+            </p>
+          </li>
+        </ul>
+      </div>
 
+      <div class="blog-section">
+        <h2>Bioinformatics / Cheminformatics / Computational Biology</h2>
+        <ul class="blog-list">
+          <li class="blog-item">
+            <p>
+              <strong>DrugDiscovery.NET</strong> — Andreas Bender<br>
+              Insights into cheminformatics, drug discovery, and data-driven research.
+              <a href="http://www.drugdiscovery.net/">[More]</a>
+            </p>
+          </li>
 
-<div class="topnav">
-  <a  href="index.html">Home</a>
-  <a href="research.html">Research</a>
-  <a href="publication.html">Publication</a>
-  <a href="software.html">Software</a>
-  <a href="tutorial.html">Tutorial</a>
-   <a href="contact.html">Contact</a>
-    <a class="active" href="blog.html">Blog </a>
-</div>
-<center>
-<div><br>
-<h5 style="color:#ff00ff;">  
-Anything on the internet that catches my attention may pop up here.</h5> <hr>
+          <li class="blog-item">
+            <p>
+              <strong>Proteins and Wave Functions</strong> — Jan Jansen<br>
+              Computational chemistry, proteins, and molecular simulations.
+              <a href="http://proteinsandwavefunctions.blogspot.com/">[More]</a>
+            </p>
+          </li>
 
+          <li class="blog-item">
+            <p>
+              <strong>Computational Chemistry Daily</strong><br>
+              A curated daily feed of computational chemistry news and papers.
+              <a href="https://paper.li/compchemdaily#/">[More]</a>
+            </p>
+          </li>
+        </ul>
+      </div>
 
+      <div class="blog-section">
+        <h2>Interesting science blogs</h2>
+        <ul class="blog-list">
+          <li class="blog-item">
+            <p>
+              <strong>Michelle Lynn Gill</strong><br>
+              Senior AI and Deep Learning Scientist in Life Sciences at NVIDIA.
+              <a href="https://michellelynngill.com/">[More]</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-<b>Interesting science podcast to follow:</b> <br>
-
-<p>
-Lex Fridman is an AI researcher working on autonomous vehicles, human-robot interaction, and machine learning at MIT. This platform is a 'Joe Rogan styled' podcast but primarily focused on scientific topics.   <a href="https://www.youtube.com/user/lexfridman"> [More]</a>
-</p>
-
-<p>
-Sean Michael Carroll is a theoretical physicist specializing in quantum mechanics, gravity, and cosmology. Sean Carroll hosts conversations with the world's most interesting thinkers. Science, society, philosophy, culture, arts, and ideas.   <a href="https://www.youtube.com/channel/UCRhV1rWIpm_pU19bBm_2RXw"> [More]</a>
-</p>
-<hr>
-<br>
-
-
-
-
-<b> Artificial Inteligence/Machine Learning:</b><br> 
-
-<p>
-DeepLearning.AI : AI For Everyone
-<br>
-<a href="https://www.deeplearning.ai/"> [More]</a>
-</p>
-
-
-
-<p>
-Coursera:By Andrew Ng
-<br>
-<a href="https://www.coursera.org/instructor/andrewng"> [More]</a>
-</p>
-
-<hr>
-<br>
-
-
-
-<b> Bioinformatics/Cheminformatics/Computational Biology related pages </b> 
-
-
-
-<p>
-DrugDiscovery.NET :By Andreas Bender <br>
-<a href="http://www.drugdiscovery.net/"> [More]</a>
-</p>
-
-
-
-<p>
-Proteins and Wave Functions :By Jan Jansen <br>
-<a href="http://proteinsandwavefunctions.blogspot.com/"> [More]</a>
-</p>
-<hr>
-<br>
-<p>
-Computational Chemistry Daily: <br>
-<a href="https://paper.li/compchemdaily#/"> [More]</a>
-</p>
-<hr>
-<br>
-
-
-<hr>
-<br>
-
-
-
-<b>Interesting science blogs to follow:</b> <br>
-<p>
-
-Michelle Lynn Gill: Currently a Senior AI and Deep Learning Scientist in Life Sciences at NVIDIA.  <br>
-<a href="https://michellelynngill.com/"> [More]</a>
-</p>
-
-</div>
-</center>
-<center>
-<footer class="flex-container footer">Copyright © 2021. Seke Keretsu. All rights reserved.
-</footer>
-</center>
+    <footer>
+      Copyright © 2021. Seke Keretsu. All rights reserved.
+    </footer>
+  </main>
 </body>
-</center>
 </html>
