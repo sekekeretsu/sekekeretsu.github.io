@@ -10,7 +10,7 @@
   <title>Contact</title>
 
   <!-- Shared site styling -->
-  <link rel="stylesheet" href="site.css" />
+  <link rel="stylesheet" href="assets/site.css" />
 
   <!-- Page-specific styling -->
   <style>
@@ -69,4 +69,90 @@
       font-size: .95rem;
     }
 
-    @med
+    @media (min-width: 760px){
+      .contact-grid{
+        grid-template-columns: 1.1fr .9fr;
+        align-items: start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="topnav" aria-label="Primary navigation">
+    <div class="inner">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publication.html">Publication</a>
+      <a href="software.html">Software</a>
+      <a href="tutorial.html">Tutorial</a>
+      <a class="active" href="contact.html">Contact</a>
+      <a href="blog.html">Blog</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h1>Contact</h1>
+
+      <p>
+        A quick way to contact me is through my email or Twitter. Please do not spam me for personal favour.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h2>Address</h2>
+          <p class="address">
+Seke Keretsu, Ph.D.
+Researcher
+Department of Biomedical Sciences
+Chosun University
+Gwangju
+South Korea
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h2>Links</h2>
+          <ul class="links">
+            <li>
+              <a href="mailto:keretsu@gmail.com">
+                <span>Email</span>
+                <span class="tag">keretsu@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/keretsu">
+                <span>Twitter</span>
+                <span class="tag">@keretsu</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/sekekeretsu">
+                <span>GitHub</span>
+                <span class="tag">sekekeretsu</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.researchgate.net/profile/Seketoulie_Keretsu2">
+                <span>ResearchGate</span>
+                <span class="tag">Profile</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://scholar.google.com/citations?user=UWhv5M8AAAAJ&hl=en&oi=ao">
+                <span>Google Scholar</span>
+                <span class="tag">Citations</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Copyright © 2021. Seke Keretsu. All rights reserved.
+    </footer>
+  </main>
+</body>
+</html>
