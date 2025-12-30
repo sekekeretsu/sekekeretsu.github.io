@@ -192,113 +192,70 @@ When tested on multiple real-world biological datasets, WEC identified protein c
         <img class="hero-img" src="ppi.png" alt="PPI workflow illustration" />
       </figure>
       
-<section class="algorithm-box" aria-label="Algorithm 1: Algorithm for WEC">
-  <h3>Algorithm 1</h3>
-  <div class="subtitle">Algorithm for WEC</div>
-  <hr />
+<section class="algorithm-box">
+  <h3 class="grey">Algorithm 1: Weighted Edge-based Clustering (WEC)</h3>
 
-  <div class="meta">
-    <p><strong>Input:</strong> PPI network: <span class="math">G(V,E)</span>, GEP: <span class="math">G(V)</span>;</p>
-    <p class="indent">Threshold Parameters: <span class="math">T<sub>w</sub></span>, <span class="math">T<sub>f</sub></span>, <span class="math">T<sub>enrich</sub></span> and <span class="math">λ</span></p>
-    <p><strong>Output:</strong> Set of Predicted Complex <span class="math">FC</span></p>
-    <p class="indent"><span class="em">Initialisation:</span></p>
-  </div>
+  <p><strong>Input:</strong></p>
+  <ul>
+    <li>Protein–Protein Interaction (PPI) Network: <em>G(V, E)</em></li>
+    <li>Gene Expression Profiles (GEP): <em>G(V)</em></li>
+    <li>Threshold parameters: <em>τ, T<sub>f</sub>, T<sub>enrich</sub>, λ</em></li>
+  </ul>
 
-  <div class="pseudocode" role="list">
-    <div class="line" role="listitem"><div class="ln">1:</div><div><span class="math">FC</span> = ∅</div></div>
-    <div class="line" role="listitem"><div class="ln">2:</div><div><span class="math">PC</span> = ∅</div></div>
+  <p><strong>Output:</strong></p>
+  <ul>
+    <li>Set of predicted protein complexes: <em>FC</em></li>
+  </ul>
 
-    <div class="line" role="listitem">
-      <div class="ln">3:</div>
-      <div><span class="kw">for</span> vertex <span class="math">v ∈ V</span> <span class="kw">do</span></div>
-    </div>
+  <p><strong>Initialization:</strong></p>
+  <pre>
+FC ← ∅
+PC ← ∅
+  </pre>
 
-    <div class="line" role="listitem"><div class="ln">4:</div><div class="indent1"><span class="math">C</span> = ∅;</div></div>
-    <div class="line" role="listitem"><div class="ln">5:</div><div class="indent1"><span class="math">C</span> ← <span class="math">v</span>;</div></div>
+  <p><strong>Main Procedure:</strong></p>
+  <pre>
+for each vertex v ∈ V do
+    C ← ∅
+    C ← {v}
 
-    <div class="line" role="listitem">
-      <div class="ln">6:</div>
-      <div class="indent1"><span class="kw">for</span> neighbor vertex <span class="math">u ∈ N<sub>v</sub></span> <span class="kw">do</span></div>
-    </div>
+    for each neighboring vertex u ∈ N(v) do
+        PCC ← evaluate gene expression correlation between v and u
+        ECC ← evaluate edge clustering coefficient between v and u
+        WEdge ← (ECC × λ) + ((1 − λ) × PCC)
 
-    <div class="line" role="listitem"><div class="ln">7:</div><div class="indent2"><span class="math">PCC</span> = evaluate <span class="math">PCC(u, v)</span>;</div></div>
-    <div class="line" role="listitem"><div class="ln">8:</div><div class="indent2"><span class="math">ECC</span> = evaluate <span class="math">ECC(u, v)</span>;</div></div>
-    <div class="line" role="listitem"><div class="ln">9:</div><div class="indent2"><span class="math">W<sub>Edge</sub></span> = (<span class="math">ECC × λ</span>) + ((1 − <span class="math">λ</span>) × <span class="math">PCC</span>)</div></div>
+        if WEdge ≥ τ then
+            C ← C ∪ {u}
+        end if
+    end for
 
-    <div class="line" role="listitem">
-      <div class="ln">10:</div>
-      <div class="indent2"><span class="kw">if</span> <span class="math">W<sub>Edge</sub> ≥ T<sub>w</sub></span> <span class="kw">then</span></div>
-    </div>
+    if OS(Cmax, C) &lt; T_f then
+        PC ← PC ∪ {C}
+    else
+        if |C| &gt; |C′| then
+            PC ← PC ∪ {C}
+            discard C′
+        end if
+    end if
+end for
+  </pre>
 
-    <div class="line" role="listitem"><div class="ln">11:</div><div class="indent3"><span class="math">C</span> ← <span class="math">u</span>;</div></div>
-    <div class="line" role="listitem"><div class="ln">12:</div><div class="indent2"><span class="kw">end if</span></div></div>
-    <div class="line" role="listitem"><div class="ln">13:</div><div class="indent1"><span class="kw">end for</span></div></div>
+  <p><strong>Enrichment Step:</strong></p>
+  <pre>
+for each complex C ∈ PC do
+    U_enrich ← candidate neighboring proteins
 
-    <div class="line" role="listitem">
-      <div class="ln">14:</div>
-      <div class="indent1">
-        <span class="math">C<sub>max</sub></span> = arg&nbsp;max <span class="math">OS(C′, C)</span>
-        <span class="math em"> (C′ ∈ PC)</span>
-      </div>
-    </div>
+    for each u′ ∈ U_enrich do
+        if NA(u′, C) ≥ T_enrich then
+            C ← C ∪ {u′}
+        end if
+    end for
 
-    <div class="line" role="listitem">
-      <div class="ln">15:</div>
-      <div class="indent1"><span class="kw">if</span> <span class="math">OS(C<sub>max</sub>, C) &lt; T<sub>f</sub></span> <span class="kw">then</span></div>
-    </div>
-
-    <div class="line" role="listitem"><div class="ln">16:</div><div class="indent2"><span class="math">PC</span> ← <span class="math">C</span>;</div></div>
-
-    <div class="line" role="listitem"><div class="ln">17:</div><div class="indent1"><span class="kw">else</span></div></div>
-
-    <div class="line" role="listitem">
-      <div class="ln">18:</div>
-      <div class="indent2">
-        <span class="kw">if</span>
-        ( |∑<sub>(u,v)∈C</sub> <span class="math">ECC(u,v)</span>|
-        ≥ |∑<sub>(u′,v′)∈C<sub>max</sub></sub> <span class="math">ECC(u′,v′)</span>| )
-        <span class="kw">then</span>
-      </div>
-    </div>
-
-    <div class="line" role="listitem"><div class="ln">19:</div><div class="indent3"><span class="math">PC</span> ← <span class="math">C</span>;</div></div>
-    <div class="line" role="listitem"><div class="ln">20:</div><div class="indent3">discard <span class="math">C′</span>;</div></div>
-    <div class="line" role="listitem"><div class="ln">21:</div><div class="indent2"><span class="kw">end if</span></div></div>
-    <div class="line" role="listitem"><div class="ln">22:</div><div class="indent1"><span class="kw">end if</span></div></div>
-    <div class="line" role="listitem"><div class="ln">23:</div><div><span class="kw">end for</span></div></div>
-
-    <div class="line" role="listitem">
-      <div class="ln">24:</div>
-      <div><span class="kw">for</span> <span class="math">C ∈ PC</span> <span class="kw">do</span></div>
-    </div>
-
-    <div class="line" role="listitem">
-      <div class="ln">25:</div>
-      <div class="indent1">
-        <span class="math">U<sub>enrich</sub></span> =
-        { <span class="math">u</span> | <span class="math">u ∈ V</span>, <span class="math">u ∉ C</span>,
-        <span class="math">e(u,v) ∈ E</span>, <span class="math">v ∈ C</span> };
-      </div>
-    </div>
-
-    <div class="line" role="listitem">
-      <div class="ln">26:</div>
-      <div class="indent1"><span class="kw">for</span> <span class="math">u′ ∈ U<sub>enrich</sub></span> <span class="kw">do</span></div>
-    </div>
-
-    <div class="line" role="listitem">
-      <div class="ln">27:</div>
-      <div class="indent2"><span class="kw">if</span> <span class="math">NA(u′, C) ≥ T<sub>enrich</sub></span> <span class="kw">then</span></div>
-    </div>
-
-    <div class="line" role="listitem"><div class="ln">28:</div><div class="indent3"><span class="math">C</span> = <span class="math">C ∪ u′</span>;</div></div>
-    <div class="line" role="listitem"><div class="ln">29:</div><div class="indent2"><span class="kw">end if</span></div></div>
-    <div class="line" role="listitem"><div class="ln">30:</div><div class="indent1"><span class="kw">end for</span></div></div>
-
-    <div class="line" role="listitem"><div class="ln">31:</div><div class="indent1"><span class="math">FC</span> ← <span class="math">C</span>;</div></div>
-    <div class="line" role="listitem"><div class="ln">32:</div><div><span class="kw">end for</span></div></div>
-  </div>
+    FC ← FC ∪ {C}
+end for
+  </pre>
 </section>
+
 
 <hr>
 
