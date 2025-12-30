@@ -9,10 +9,8 @@
 
   <title>Research</title>
 
-  <!-- Use the shared stylesheet -->
   <link rel="stylesheet" href="site.css" />
 
-  <!-- Small page-specific additions (optional) -->
   <style>
     .hero-img{
       display: block;
@@ -40,6 +38,13 @@
       margin-top: .5rem;
       text-align: center;
     }
+    .pub-box{
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: .75rem;
+      margin-top: .75rem;
+      background: rgba(255,255,255,.6);
+    }
   </style>
 </head>
 
@@ -59,170 +64,49 @@
   <main class="container">
     <section class="card">
       <h1>Research</h1>
-    <hr>
+      <hr>
+
       <p>
         This includes ongoing research projects as well as other interests I intend to pursue in the near future.
         These works can be broadly classified into application- and development-oriented projects.
       </p>
-      <p>This part will be updated from time to time.</p>
+      <p>This section will be updated periodically.</p>
 
       <hr>
 
-      <h2 class="section-title">An Integrated Multi-Omics Analysis of Astrocyte–Immune Interactions in Glioblastoma</h2>
+      <h2 class="section-title">
+        An Integrated Multi-Omics Analysis of Astrocyte–Immune Interactions in Glioblastoma
+      </h2>
       <figure>
         <img class="hero-img" src="astro.jpg" alt="Astro-immune interaction in GBM" />
       </figure>
-       <p>
-    This study investigates astrocyte–immune cell interactions using an integrated multi-omics approach, combining transcriptomic, spatial transcriptomic/proteomics
-         and spatial analyses to define cellular crosstalk within the Glioblastoma tumor microenvironment.
-    </p>
+      <p>
+        This study investigates astrocyte–immune cell interactions using an integrated multi-omics approach,
+        combining transcriptomic, spatial transcriptomic/proteomic, and spatial analyses to define cellular
+        crosstalk within the glioblastoma tumor microenvironment.
+      </p>
 
-    <hr>
-    <hr>
-          <hr>
-            <h2 class="section-title">Characterizing MAIT cells in Glioblastoma</h2>
+      <hr>
+
+      <h2 class="section-title">Characterizing MAIT cells in Glioblastoma</h2>
       <figure>
         <img class="hero-img" src="mait.jpeg" alt="MAIT cells in GBM" />
       </figure>
-       <p>
-We used TCR sequencing, single-cell RNA sequencing (scRNA-seq), and multiplex tissue imaging with CODEX to investigate the role of mucosal-associated invariant T (MAIT) cells in glioblastoma (GBM). Our study demonstrated that MAIT cells are present within GBM tumor tissue and are associated with immunosuppressive myeloid cells. Survival analysis of the TCGA-GBM dataset showed that increased MAIT cell abundance correlates with poor patient survival. Functional studies further suggest that MAIT cells may exert an immunosuppressive role through IL-17 signaling.    </p>
-
-          <h3>Highlight of the study:</h3>
-    <ul>
-    <li>The expression level of MAIT signature genes correlates with the poor survival of GBM patients</li>
-    <li>MAIT17 cells are a predominant MAIT functional subset in GBM tumors</li>
-    <li>MAIT cells play immunosuppressive roles in GBM through TANs</li>
-    </ul>
-  <p>
- 
-          <label for="cite-wec">Publication:</label>
-          <textarea id="cite-wec" readonly>
-            <strong>Keretsu, S. </strong>, Hana, T., Lee, A., Kedei, N., Malik, N., Kim, H., … Terabe, M. (2025).
-            <em>Characterization of MAIT cells in glioblastoma reveals a potential immunosuppressive role through a
-            MAIT–Neutrophil axis.</em> Neuro-Oncology Advances, vdaf173.   
-            <a
-              href="https://academic.oup.com/noa/article/7/1/vdaf173/8220697"
-  target="_blank"
-  rel="noopener"
-  style="
-    display:inline-block;
-    padding:.45rem .75rem;
-    border:1px solid #e5e7eb;
-    border-radius:10px;
-    text-decoration:none;"
-    >
-  Read full article
-  </a>
-
-    </p>
-
-    
-      
-
-
-      <h3> More details regarding my multi-Omics projects will be updated soon!</h3>
-      
-      <hr>
-          <hr>
-
-      <h2 class="section-title"> Computational study of serotonin receptors (GPCR)</h2>
-      <figure>
-        <img class="hero-img" src="membrane.jpg" alt="Membrane illustration related to GPCR research" />
-      </figure>
       <p>
-        Recent studies on GPCR proteins and CRISPR-CAS9 systems have demonstrated that GaMD techniques could be
-        effectively used to study the binding and activation mechanisms of large biomolecular systems. I am curious
-        to find out if these enhanced sampling techniques can be used to resolve existing structural enigmas in the
-        areas of GPCR proteins such as serotonin receptors.
+        We used TCR sequencing, single-cell RNA sequencing (scRNA-seq), and multiplex tissue imaging (CODEX)
+        to investigate the role of mucosal-associated invariant T (MAIT) cells in glioblastoma (GBM).
+        MAIT cells were present within GBM tumors and associated with immunosuppressive myeloid cells.
+        Increased MAIT cell abundance correlated with poor patient survival in the TCGA-GBM cohort.
+        Functional analyses suggest an immunosuppressive role mediated through IL-17 signaling.
       </p>
 
-      <hr>
+      <h3>Highlights</h3>
+      <ul>
+        <li>MAIT gene signatures correlate with poor survival in GBM</li>
+        <li>MAIT17 cells are the dominant MAIT subset in GBM tumors</li>
+        <li>MAIT cells contribute to immunosuppression via tumor-associated neutrophils</li>
+      </ul>
 
-      <hr>
-
-      <h2 class="section-title">
-        Virtual screening of MEROPS (a protease database) for potential COVID-19 main protease (SARS-CoV-2)
-      </h2>
-      <figure>
-        <img class="hero-img" src="sarscov2.jpg" alt="SARS-CoV-2 illustration" />
-      </figure>
-      <p>
-        In the fast-evolving coronavirus disease (COVID-19) pandemic, repurposing existing drugs and evaluating
-        commercially available inhibitors against druggable targets could be an effective strategy to accelerate
-        drug discovery. The 3C-Like proteinase (3CLpro) of SARS-CoV-2 has been identified as an important drug target
-        due to its role in viral replication. The availability of the X-ray crystal structure of 3CLpro (PDB ID: 6LU7)
-        motivated us to perform a computational study to identify commercially available potential inhibitors.
-      </p>
-      <p>
-        A combination of modeling studies was performed to identify potential 3CLpro inhibitors from the protease
-        inhibitor database MEROPS (https://www.ebi.ac.uk/merops/index.shtml). We found 15 potential 3CLpro inhibitors
-        with higher binding affinity than the inhibitor in the X-ray structure (α-ketoamide). Among them, Saquinavir
-        (an approved HIV-1 drug) and investigational drugs such as aclarubicin, TMC-310911, and faldaprevir were
-        suggested as potential 3CLpro inhibitors.
-      </p>
-
-      <hr>
-
-      <h2 class="section-title">
-        Modelling study of Nanobody binding to Angiotensin II Type 1 Receptor (AT1R) and virtual screening of AT1R inhibitors
-      </h2>
-      <p>
-        <strong>Abstract:</strong> Angiotensin II type 1 receptors (AT1R) have emerged as an important G Protein-Coupled
-        Receptor (GPCR) because of the role it plays in regulating cardiovascular and renal activities. Consequently,
-        inhibitors that target AT1R are considered therapeutic agents for heart failure diseases. However, computational
-        studies of AT1R–G protein interactions have not been studied due to the oversized system that incurs high
-        computational cost.
-      </p>
-      <p>
-        This proposal was designed to study the coupling mechanism of ligand binding to AT1R and the conformational
-        changes leading to stabilization and activation of AT1R using Gaussian accelerated molecular dynamics (GaMD).
-        In addition, a docking-based virtual screening protocol was proposed to identify potential AT1R antagonists
-        from the ZINC database. Binding free energy evaluation of selected ligands will be performed using MM-PBSA.
-        The outcome could provide useful insight into the mechanism of AT1R activation and may assist in discovery of
-        AT1R antagonists.
-      </p>
-
-      <hr>
-
-      <h2 class="section-title">Data mining in PPI networks</h2>
-      <p>
-        I have worked in the area of data mining in biological networks under the project entitled,
-        “Protein complex identification in protein-protein interaction networks with the incorporation of gene
-        expression profile,” supervised by Dr. Rosy Sarmah, Tezpur University. The study culminated in the development
-        of new bioinformatics methods that showed statistically better protein complex prediction. The Java
-        implementations of the methods are available at:
-        <br>
-        http://agnigarh.tezu.ernet.in/~rosy8/shared.html
-        <br>
-        or https://github.com/sekekeretsu/
-      </p>
-
-      <hr>
-
-      <h2 class="section-title">Mechanism of STING agonism</h2>
-      <p>
-        The transmembrane protein stimulator of interferon genes (STING) is an important component of the immune
-        signalling pathway and its activation has been shown to elevate immune response in tumour cancers. Hence,
-        STING agonists are of vital pharmaceutical importance for cancer immunotherapy. My research proposal titled
-        “Discovery of small molecules and dinucleotide analogs as STING agonist for cancer immunotherapy” was designed
-        to study the mechanism of activation of STING and to develop small molecules and hydrolysis-resistant
-        dinucleotide STING agonists.
-      </p>
-      <p>
-        The study will involve protein modeling, molecular docking and simulation, binding energy calculations and
-        virtual screening of chemical compounds. It may also be carried out in collaboration with experimental partners.
-        <a href="sting.html">...More</a>
-      </p>
-
-      <figure>
-        <img class="hero-img" src="membrane.tif" alt="Top and bottom views of the Serotonin receptor 5HT2A." />
-        <figcaption>Top and bottom views of the Serotonin receptor 5HT2A.</figcaption>
-      </figure>
-    </section>
-
-    <footer>
-      Copyright © 2021. Seke Keretsu. All rights reserved.
-    </footer>
-  </main>
-</body>
-</html>
+      <div class="pub-box">
+        <p>
+          <st
