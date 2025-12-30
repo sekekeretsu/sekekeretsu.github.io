@@ -1,110 +1,190 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title> About Me</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<m'/home/biopo5/Music/mygit/sekekeretsu.github.io/research.html' eta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="no-referrer">
-<meta name="description" content="Seke Keretsu.">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="description" content="Seke Keretsu." />
 
-<style>
-div {
-  width: 100%;
-  max-width: 1000px;
-  min-width: 100px;
-  background-color:#D3D3D3;
-  text-align:justify;	
-  text-indent:50px; 
-  margin-right: 0%;
-  margin-left:  0%;
+  <title>About Me</title>
 
-}
-</style>
+  <style>
+    :root{
+      --bg: #f6f7f9;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #4b5563;
+      --border: #e5e7eb;
+      --nav: #111827;
+      --navText: #f9fafb;
+      --navHover: #374151;
+      --accent: #22c55e;
+
+      --radius: 14px;
+      --shadow: 0 10px 25px rgba(0,0,0,.08);
+      --maxw: 980px;
+    }
+
+    *{ box-sizing: border-box; }
+    html, body{ height: 100%; }
+    body{
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Layout */
+    .container{
+      width: min(100% - 2rem, var(--maxw));
+      margin: 0 auto;
+      padding: 1.5rem 0 2.5rem;
+    }
+
+    /* Top navigation */
+    .topnav{
+      background: var(--nav);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .topnav .inner{
+      width: min(100% - 2rem, var(--maxw));
+      margin: 0 auto;
+      display: flex;
+      gap: .25rem;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: .65rem 0;
+    }
+    .topnav a{
+      color: var(--navText);
+      text-decoration: none;
+      padding: .55rem .75rem;
+      border-radius: 10px;
+      font-size: 0.98rem;
+      line-height: 1.1;
+    }
+    .topnav a:hover{
+      background: var(--navHover);
+    }
+    .topnav a.active{
+      background: rgba(34,197,94,.18);
+      border: 1px solid rgba(34,197,94,.35);
+    }
+
+    /* Content card */
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(1rem, 2vw, 1.5rem);
+      margin-top: 1.25rem;
+    }
+
+    .headshot{
+      display: block;
+      width: clamp(120px, 22vw, 190px);
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 20px rgba(0,0,0,.10);
+      margin: 0 auto 1rem;
+    }
+
+    p{
+      margin: 0 0 1rem;
+      color: var(--text);
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+    }
+
+    a{
+      color: #2563eb;
+    }
+    a:hover{
+      text-decoration: underline;
+    }
+
+    footer{
+      margin-top: 1.25rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: .92rem;
+      padding: 1rem 0 0;
+    }
+
+    /* Better spacing on very small screens */
+    @media (max-width: 420px){
+      .topnav a{ padding: .5rem .6rem; }
+      .container{ width: min(100% - 1.25rem, var(--maxw)); }
+    }
+  </style>
 </head>
 
-
-
-<style>
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: left;
-  padding: 10px 8px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.illustration{
-max-width: 300px;
-}
-</style>
-
-
-<center>
-<div class="topnav">
-  <a class="active" href="index.html">Home</a>
-  <a href="research.html">Research</a>
-  <a href="publication.html">Publication</a>
-  <a href="software.html">Software</a>
-  <a href="tutorial.html">Tutorial</a>
-   <a href="contact.html">Contact</a>
-    <a href="blog.html">Blog </a>
-</div>
-</center>
-<center>
 <body>
+  <nav class="topnav" aria-label="Primary navigation">
+    <div class="inner">
+      <a class="active" href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publication.html">Publication</a>
+      <a href="software.html">Software</a>
+      <a href="tutorial.html">Tutorial</a>
+      <a href="contact.html">Contact</a>
+      <a href="blog.html">Blog</a>
+    </div>
+  </nav>
 
+  <main class="container">
+    <section class="card">
+      <img class="headshot" src="headshot.jpg" alt="Headshot of Seke Keretsu" />
 
-<!--center>
-<img  align='middle' class='illustration' style= 'width:100%' src="headshot.jpg" alt=" headshot" >
-</center-->
-<div>
-<center>
-<img class="illustrator" style="width:20%" src="headshot.jpg" />
-</center>
+      <p>
+        I am a Post-Doctoral Research Fellow at the Laboratory of Integrative Cancer Immunology at the
+        National Cancer Institutes at National Institutes of Health (NIH) in Bethesda, Mayland.
+        Perviously, I have briefly worked as a PostDoc at the Dalhousie University with professors
+        Dr. Shashi Gujar and Dr. Tobias Karakach. I was also a Post-Doctoral researcher at the Cancer
+        Mutation Research Center at Chosun University, South Korea.
+      </p>
 
-<p> I am a Post-Doctoral Research Fellow at the Laboratory of Integrative Cancer Immunology at the National Cancer Institutes at National Institutes of Health (NIH) in Bethesda, Mayland.
-    Perviously, I have briefly worked as a PostDoc at the Dalhousie University with professors Dr. Shashi Gujar and Dr. Tobias Karakach. I was also a Post-Doctoral researcher at the Cancer Mutation Research Center at Chosun University, South Korea. 
+      <p>
+        I did my Ph.D. in bioinformatics at the Department of Biomedical Sciences at
+        <a href="https://www3.chosun.ac.kr/eng/index.do">Chosun University</a> in South Korea under the supervision of
+        <strong>Prof. Seung Joo Cho</strong>. My Master's degree in Information Technology was done at the Department of
+        Computer Science and Engineering at Tezpur Univesity, during which I used data mining techniques to identify
+        protein complexes in Protein-Protein Interaction networks. The study was carried out under the guidance of
+        Prof. Rosy Sarmah.
+      </p>
 
-</p>
+      <p>
+        I am trained in various data mining (in PPI networks) and molecular modeling techniques such as protein
+        modeling, molecular docking, molecular dynamics simulation, enhanced sampling techniques, free energy
+        calculation, virtual screening, and 3D quantitative structure-activity relationships (3D-QSAR) analysis.
+        Over the years I have acquired programming skills in C, C++, Java, and Python. I have also implemented the
+        methods conceptualized in my Master's degree dissertation using Java API. The implemented codes and executables
+        are available <a href="https://sekekeretsu.github.io/software.html">here</a>.
+      </p>
 
-<p>
-I did my Ph.D. in bioinformatics at the Department of Biomedical Sciences at <a href="https://www3.chosun.ac.kr/eng/index.do"> Chosun University</a> under the supervision of </b>Prof. Seung Joo Cho</b>, in South Korea. My Master's degree in Information Technology was done at the Department of Computer Science and Engineering at Tezpur Univesity, during which I used data mining techniques to identify protein complexes in Protein-Protein Interaction networks. The study was carried out under the guidance of Prof. Rosy Sarmah. 
-</p>
-<p>
-I am trained in various data mining (in PPI networks) and molecular modeling techniques such as protein modeling, molecular docking, molecular dynamics simulation, enhanced sampling techniques, free energy calculation, virtual screening, and 3D quantitative structure-activity relationships (3D-QSAR) analysis.  
+      <p>
+        In several of my past projects, I have used classical MD to study protein-ligand binding interactions to
+        understand the inhibitory mechanisms of medically important kinases. Currently, I am also exploring enhanced
+        sampling techniques such as Gaussian accelerated MD (GaMD) and supervised MD to study the activation mechanism
+        of serotonin receptors. At this point in my career, I am interested to acquire expertise in advanced molecular
+        dynamics (MD) simulation techniques of biomolecules.
+      </p>
+    </section>
 
-
-Over the years I have acquired programming skills in C, C++, Java, and python. I have also implemented the methods conceptualized in my Master's degree dissertation using java API. The implemented codes and executables are available <a href=" https://sekekeretsu.github.io/software.html"> here.</a>
-</p>
-
-<p>
-In several of my past projects, I have used classical MD to study protein-ligand binding interactions to understand the inhibitory mechanisms of medically important kinases. Currently, I am also exploring enhanced sampling techniques such as Gaussian accelerated MD (GaMD) and supervised MD to study the activation mechanism of serotonin receptors. At this point in my career, I am interested to acquire expertise in advanced molecular dynamics (MD) simulation techniques of biomolecules. 
-</p>
-<br>
-</div>
-
-<center>
-<footer class="flex-container footer">Copyright © 2021. Seke Keretsu. All rights reserved.
-</footer>
-</center>
+    <footer>
+      Copyright © 2021. Seke Keretsu. All rights reserved.
+    </footer>
+  </main>
 </body>
-</center>
 </html>
