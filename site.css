@@ -1,0 +1,161 @@
+/* ==============================
+   Global variables & reset
+   ============================== */
+:root{
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #4b5563;
+  --border: #e5e7eb;
+
+  --nav: #111827;
+  --navText: #f9fafb;
+  --navHover: #374151;
+  --accent: #22c55e;
+
+  --radius: 14px;
+  --shadow: 0 10px 25px rgba(0,0,0,.08);
+  --maxw: 980px;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+html, body{
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+               "Apple Color Emoji","Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==============================
+   Layout container
+   ============================== */
+.container{
+  width: min(100% - 2rem, var(--maxw));
+  margin: 0 auto;
+  padding: 1.5rem 0 2.5rem;
+}
+
+/* ==============================
+   Navigation bar
+   ============================== */
+.topnav{
+  background: var(--nav);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topnav .inner{
+  width: min(100% - 2rem, var(--maxw));
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  align-items: center;
+  padding: .65rem 0;
+}
+
+.topnav a{
+  color: var(--navText);
+  text-decoration: none;
+  padding: .55rem .75rem;
+  border-radius: 10px;
+  font-size: 0.98rem;
+  line-height: 1.1;
+  transition: background .2s ease;
+}
+
+.topnav a:hover{
+  background: var(--navHover);
+}
+
+.topnav a.active{
+  background: rgba(34,197,94,.18);
+  border: 1px solid rgba(34,197,94,.35);
+}
+
+/* ==============================
+   Content card
+   ============================== */
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(1rem, 2vw, 1.5rem);
+  margin-top: 1.25rem;
+}
+
+/* ==============================
+   Images
+   ============================== */
+.headshot{
+  display: block;
+  width: clamp(120px, 22vw, 190px);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 20px rgba(0,0,0,.10);
+  margin: 0 auto 1rem;
+}
+
+/* ==============================
+   Typography
+   ============================== */
+h1, h2, h3{
+  line-height: 1.3;
+  margin: 0 0 .75rem;
+}
+
+p{
+  margin: 0 0 1rem;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+a{
+  color: #2563eb;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+/* ==============================
+   Footer
+   ============================== */
+footer{
+  margin-top: 1.25rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: .92rem;
+  padding-top: 1rem;
+}
+
+/* ==============================
+   Small screen adjustments
+   ============================== */
+@media (max-width: 420px){
+  .container{
+    width: min(100% - 1.25rem, var(--maxw));
+  }
+
+  .topnav a{
+    padding: .5rem .6rem;
+    font-size: .95rem;
+  }
+}
