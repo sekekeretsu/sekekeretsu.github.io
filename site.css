@@ -206,3 +206,14 @@ footer{
   color: #6f6f6f;
   text-align: center;
 }
+
+body{
+  margin: 0;
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono",
+               "Courier New", ui-monospace, monospace;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
